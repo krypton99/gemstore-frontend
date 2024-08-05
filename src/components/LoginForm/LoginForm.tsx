@@ -15,8 +15,6 @@ const LoginForm = () => {
     password: "",
   });
 
-  //const [isSuccess, setIsSuccess] = useState(true);
-
   const auth = useAuth();
 
   const handleSubmitEvent = async (e: any) => {

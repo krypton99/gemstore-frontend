@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.wrapper,
+.content {
+    height: 100%;
+    width: 100%;
+}

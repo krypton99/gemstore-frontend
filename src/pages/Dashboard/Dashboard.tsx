@@ -1,22 +1,17 @@
-import classNames from "classnames/bind"
-import styles from './Dashboard.module.scss'
-import { useAuth } from "../../authenticate";
+import classNames from "classnames/bind";
+import styles from "./Dashboard.module.scss";
+import { Box } from "@mui/material";
+import Header from "../../layouts/components/DashboardHeader/DashboardHeader";
+
 
 const cx = classNames.bind(styles);
 
+const Dashboard: React.FC<{}> = () => {
+  return (
+    <Box m="20px">
+      <Header title="DASHBOARD" subtitle="Welcome to dashboard!" />
+    </Box>
+  );
+};
 
-
-const Dashboard : React.FC<{}> = () => {
-
-    const auth = useAuth();
-
-    return (
-        <div className={cx("wrapper")}>
-            <h1>Welcome to Dashboard</h1>
-            <h2>Welcome {auth.user}</h2>
-            <button className={cx("btn-submit")} onClick={auth.logOut}>Log out</button>
-        </div>
-    )
-}
-
-export default Dashboard
+export default Dashboard;
