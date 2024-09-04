@@ -81,7 +81,7 @@ input,
 }
 
 a {
-    color: var(--text-color);
+    // color: var(--text-color);
     text-decoration: none;
 }
 // Fonts embedded
@@ -154,6 +154,9 @@ body {
     padding-right: 0px;
 }
 
+.css-r5yp81-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+    color: #fff !important;
+}
 /* 
     Column: .grid__column
     Prefix-class:

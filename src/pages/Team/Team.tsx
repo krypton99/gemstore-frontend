@@ -1,4 +1,4 @@
-import {Box, Typography, useTheme} from '@mui/material';
+import {Box, Button, Typography, useTheme} from '@mui/material';
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { tokens } from '../../theme';
 import { Member, mockDataTeam } from '../../data/mockData';
@@ -6,6 +6,8 @@ import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import Header from '../../layouts/components/DashboardHeader'; 
+import { Navigate, useNavigate, useNavigation } from 'react-router-dom';
+import React, { MouseEventHandler } from 'react';
 
 const Team : React.FC<{}> = () => {
     const theme = useTheme();
@@ -44,11 +46,28 @@ const Team : React.FC<{}> = () => {
                 )
             }
         },
-    ]
+    ];
+    const navigation = useNavigate();
+    const handleCreateUser : React.MouseEventHandler<HTMLButtonElement> = (e : React.MouseEvent<HTMLElement>) => {
+        e.preventDefault();
+        console.log("hello");
+        navigation("./createUser");
+    }
 
     return(
         <Box m="20px">
             <Header title="TEAM" subtitle='Managing the Team Members' />
+            <Box display="flex" justifyContent="end">
+                <Button 
+                sx={{ 
+                color : `${colors.gray[100]}`, 
+                backgroundColor : `${colors.greenAccent[600]}`
+                }}
+                onClick={handleCreateUser} 
+                >
+                Create User
+                </Button>
+            </Box>
             <Box
                 m="40px 0 0 0"
                 height="75vh"
